@@ -8,8 +8,10 @@ const expertsSchema = new mongoose.Schema ({
     occupation: {type: String, required: true},
     email: {type: String, required: true, unique: true},
     phone: {type: String, required: true, unique: true},
-    zipcode: {type: Number, required: true},
+    zipcode: {type: String, required: true},
     state: {type: String, required: true},
-    url:   {type: String, required: true, unique: true},
-})
+    url:   {type: String, required: true, unique: true}
+},
+{ collection: 'Experts'}
+)
 module.exports = mongoose.model('Experts', expertsSchema)

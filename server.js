@@ -4,9 +4,14 @@ const express = require('express');
 const app = express();
 
 const mongoose = require('mongoose');
-const Experts = require('../models/experts')
+const Experts = require('./models/experts')
+const seedExperts = require('./models/seedExperts')
 
-const mongoURI = 'mongodb://localhost:3000' + 'experts'
+//this is the db port
+const PORT = 3000  //process.env.PORT
+
+//Connect to Database
+const mongoURI = 'mongodb://localhost/hardhat'  //process.env.MONGODB_URI
 const db = mongoose.connection
 
 mongoose.connect(mongoURI, {
@@ -28,19 +33,20 @@ mongoose.connect(mongoURI, {
         console.log('mongoose error', error);
     })
 
-const PORT = 3000;
+const APPPORT = 3001;
 
 
 app.get('/', (req, res) => {
     res.send('Welcome to Hard Hat Academy!')
 })
 
-app.get('/expertdata', (req, res) => {
-    res.send("Expert Data")
+app.get('/expertdata', async (req, res) => {
+    await Experts.insertMany(seedExperts)
+    res.send('Expert Data')    
 })
 
 
 
-app.listen(PORT, () => {
-    console.log(`listening at port: ${PORT}`)
+app.listen(APPPORT, () => {
+    console.log(`listening at port: ${APPPORT}`)
 })
