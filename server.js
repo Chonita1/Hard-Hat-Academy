@@ -9,7 +9,7 @@ const Experts = require('./models/experts')
 const seedExperts = require('./models/seedExperts')
 
 //this is the db port
-const PORT = 3000  //process.env.PORT
+const PORT = process.env.PORT || 3001
 
 //Connect to Database
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/hardhat'  //process.env.MONGODB_URI
@@ -33,7 +33,6 @@ mongoose.connect(mongoURI, {
         console.log('mongoose error', error);
     })
 
-const APPPORT = 3001;
 
 
 app.get('/', (req, res) => {
@@ -47,6 +46,6 @@ app.get('/expertdata', async (req, res) => {
 
 
 
-app.listen(APPPORT, () => {
-    console.log(`listening at port: ${APPPORT}`)
+app.listen(PORT, () => {
+    console.log(`listening at port: ${PORT}`)
 })
