@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config()
 
 // we required express up above now we need to call our app
 const app = express();
@@ -11,11 +12,10 @@ const seedExperts = require('./models/seedExperts')
 const PORT = 3000  //process.env.PORT
 
 //Connect to Database
-const mongoURI = 'mongodb://localhost/hardhat'  //process.env.MONGODB_URI
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/hardhat'  //process.env.MONGODB_URI
 const db = mongoose.connection
 
 mongoose.connect(mongoURI, {
-    useFindAndModify: false,
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, () => {
@@ -23,7 +23,7 @@ mongoose.connect(mongoURI, {
 })
 
     db.on('connected', () => {
-        console.log('mongoose connect to', MONGODB_URI);
+        console.log('mongoose connect to', process.env.MONGODB_URI);
     })
     
     db.on('disconnect', () => {
