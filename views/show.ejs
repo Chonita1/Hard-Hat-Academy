@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Occupations Show</title>
+</head>
+<body>
+    <h1>Occupations Show Page</h1>
+
+    <ul>
+        <% users.forEach(function(user){ %>
+          <%- include('views/show', {seedExperts: seedExperts}); %>
+        <% }); %>
+      </ul>
+</body>
+</html>

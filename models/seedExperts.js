@@ -5,7 +5,7 @@ module.exports = [
     name: "Jane Doe",
     occupation: "CAD Machinist",
     url:  "www.careeronestop.org/blahblah",
-    email: "janedoe@cadareus.com",
+    email: "janedoe@cadsareus.com",
     phone: "312-555-1212",
     zipcode: "30001",
     state: "il"
