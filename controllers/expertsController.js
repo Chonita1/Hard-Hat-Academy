@@ -11,7 +11,9 @@ const seedExperts = require('../models/seedExperts')
 router.get('/exploreoccupations', async (req, res) => {
     
 })
-
+router.get('/', (req, res) => {
+    res.send('Welcome to Hard Hat Academy!')
+})
 //show a specific occupation
 router.get('/explore/:id', async (req, res) => {
 
