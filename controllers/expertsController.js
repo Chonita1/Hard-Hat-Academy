@@ -9,14 +9,13 @@ const seedExperts = require('../models/seedExperts')
 
 //Middlewares
 
-//list of all occupations
+//list all occupations
 router.get('/exploreoccupations', async (req, res) => {
     res.render('index.ejs', {
         occupations: seedOccupationalData,
         experts: seedExperts,
     })
 })
-
 //show a specific occupation
 router.get('/explore/:id', async (req, res) => {
     res.render('show.ejs', {
@@ -24,32 +23,26 @@ router.get('/explore/:id', async (req, res) => {
         experts: seedExperts[req.params.id],
     })
 })
-
-//edit an occupation
-router.get('/editoccupation/:id', async (req, res) => {
-
-})
-
-//update an occupation
-router.put('/updateoccupation/:id', async (req, res) => {
-
-})
-
 //create a new occupation
 router.get('/createoccupation', async (req, res) => {
+    res.render('new.ejs', {
+    })
+})
+//edit an occupation
+router.get('/editoccupation/:id', async (req, res) => {
+    res.render('edit.ejs', {
+        specificoccupationaldata: seeOccupationalData[req.params.id],
+    })
+})
+//update an occupation
+router.put('/updateoccupation/:id', async (req, res) => {
+    res.render('edit.ejs')//AM I REFERENCING THE RIGHT FILE?
 
 })
-
-
 //delete an occupation
 router.delete('/removeoccupation', async (req, res) => {
-
+    res.render('delete.ejs')//I ADDED THIS EJS ROUTE
 })
-
-// do I need this one?
-// router.put('/saveoccupation/', async (req, res) => {
-
-// })
 
 // for ejs templates
 app.set('view engine', 'ejs');
