@@ -15,7 +15,6 @@ const occupationalDataSchema = new mongoose.Schema ({
     description: {type: String, requied: true},
     training: {type: String, required: true},
     wage: {type: String, required: true, unique: true},
-    trend: {type: String, required: true, unique: true},
     url:   {type: String, required: true, unique: true}
 },
 { collection: 'Occupations'}
