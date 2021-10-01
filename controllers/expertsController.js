@@ -28,13 +28,13 @@ router.get('/createoccupation', async (req, res) => {
     res.render('new.ejs', {
     })
 })
-//edit an occupation
+//edit an occupation //are editing an occupation and updating an occupation the same thing?
 router.get('/editoccupation/:id', async (req, res) => {
     res.render('edit.ejs', {
         specificoccupationaldata: seeOccupationalData[req.params.id],
     })
 })
-//update an occupation
+//update an occupation //are updating an occupation and editing an occupation the same thing?
 router.put('/updateoccupation/:id', async (req, res) => {
     res.render('edit.ejs')//AM I REFERENCING THE RIGHT FILE?
 

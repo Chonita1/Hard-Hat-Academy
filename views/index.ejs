@@ -5,6 +5,25 @@
     <title><%= Welcome to Hard Hat Academy! %></title>
 </head>
 <body>
-    <% welcome <%= welcome%>; 
+    <h1>Browse through our video list and find your passion!</h1>
+   
+    <h2>We Are the MasterClass for Good Paying Blue Collar Jobs!</h2>
+        
+    <h3>Hard Hat Academy is an app that helps people looking for good paying blue collar
+        jobs find one that matches their talents and interests
+    </h3> 
+    <p>Just Choose an Occupation and watch a video from one our our experts to learn about What
+        it's really like to work in that occupation, what it pays, and how you can get in on it!</p>
+    <h3>
+        <ul class="occupations">
+        <%for (let i = 0; i < occupation.length; i++) {%>
+            <li>
+                <%console.log(occupation[i].title) %>
+                <a href='/occupation/<%= occupation[i].id %>' ></a><%= occupatoin[i].title %></a>
+            </li>      
+      <%  } %>
+        </ul>  
+
+
 </body>
 </html>

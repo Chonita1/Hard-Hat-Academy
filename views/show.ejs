@@ -2,15 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Show</title>
+    <title>Occupations Show Page</title>
 </head>
 <body>
-    <h1>Show Page</h1>
-
-    <ul>
-        <% users.forEach(function(user){ %>
-          <%- include('views/show', {seedExperts: seedExperts}); %>
-        <% }); %>
-      </ul>
+    <h1>What's It Like To Be a <%= Occupations.title %></h1>
+    
+    <a href="/occupation">Back to Occupations</a>
+    <h1><%=occupation.title%></h1>
+    <div>
+         <img src="<%=occupation.img%>"> <!--what should go here? NOt an image file -->
+        <p><%=occupation.title%></p>
+        <%if(product.qty <= 0){%>
+            <p>Out Of Stock</p> 
+            <%}else{%>
+                <p><%=product.qty%>remaining</p>    
+            <%}%>
+            <button>BUY</button>
+            <a href="/products/">Edit This</a>
+    </div>
+    <form>
+        <button>Delete</button>
+    </form>
 </body>
 </html>

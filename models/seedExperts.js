@@ -21,9 +21,9 @@ module.exports = [
 },
 {
     name: "David Smith",
-    occupation: "Plumber",
-    url:  "www.careeronestop.org/plumber",
-    email: "dsmith@plumbanddone.com",
+    occupation: "Welder",
+    url:  "www.careeronestop.org/welder",
+    email: "dsmith@weld-done.com",
     phone: "301-555-1212",
     zipcode: "21201",
     state: "md"
