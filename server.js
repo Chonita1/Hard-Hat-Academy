@@ -1,12 +1,16 @@
 const express = require('express');
 require('dotenv').config()
+const expertsController = require('./controllers/expertsController')
+
+
 
 // we required express up above now we need to call our app
 const app = express();
 
 const mongoose = require('mongoose');
 const Experts = require('./models/experts')
-const seedExperts = require('./models/seedExperts')
+const Occupations = require('./models/occupationalData');
+const seedOccupationalData = require('./models/seedOccupationalData');
 
 //this is the db port
 const PORT = process.env.PORT || 3001
@@ -22,28 +26,26 @@ mongoose.connect(mongoURI, {
     console.log("THE DATABASE IS CONNECTED")
 })
 
-    db.on('connected', () => {
-        console.log('mongoose connect to', process.env.MONGODB_URI);
-    })
-    
-    db.on('disconnect', () => {
-        console.log('mongoose disconnected to', MONGODB_URI);
-    })
-    db.on('error', (error) => {
-        console.log('mongoose error', error);
-    })
-
-
-
-app.get('/', (req, res) => {
-    res.send('Welcome to Hard Hat Academy!')
+db.on('connected', () => {
+    console.log('mongoose connect to', process.env.MONGODB_URI);
 })
+
+db.on('disconnect', () => {
+    console.log('mongoose disconnected to', MONGODB_URI);
+})
+db.on('error', (error) => {
+    console.log('mongoose error', error);
+})
+
+// for ejs templates
+app.set('view engine', 'ejs');
+
+app.use('/', expertsController)
 
 app.get('/expertdata', async (req, res) => {
-    await Experts.insertMany(seedExperts)
-    res.send('Expert Data')    
+    await Occupations.insertMany(seedOccupationalData)
+    res.send('Occupational Data')    
 })
-
 
 
 app.listen(PORT, () => {

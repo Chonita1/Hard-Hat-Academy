@@ -1,37 +1,52 @@
 const { application } = require('express')  // Return to this code. Is it needed?
 const express = require('express')
 const router = express.Router()
-const Occupations = require('../models/OccuationalData')
+const Occupations = require('../models/occupationalData')
 const seedOccupationalData = require('../models/seedOccupationalData')
-const Experts = require('../models/experts')
-const seedExperts = require('../models/seedExperts')
 
 
 //Middlewares
 
-//list all occupations
-router.get('/exploreoccupations', async (req, res) => {
-    res.render('index.ejs', {
-        occupations: seedOccupationalData,
-        experts: seedExperts,
-    })
+//list/explore all occupations
+router.get('/exploreoccupations', (req, res) => {
+    try{
+         Occupations.find({}, (err, allOccupations) => {
+            // ? is equal to if error then output error msg
+            err ? res.send(err)
+            // : is equal to else...
+            : res.render('index.ejs', {
+                occupations: allOccupations
+            })
+        })
+    }
+    catch (err) {
+        res.send(err.message)
+    }
 })
 //show a specific occupation
-router.get('/explore/:id', async (req, res) => {
-    res.render('show.ejs', {
-        specificoccupationaldata: seedOccupationalData[req.params.id],
-        experts: seedExperts[req.params.id],
-    })
+router.get('/explore/:id', (req, res) => {
+    try{
+        Occupations.findById(req.params.id, (err, specificOccupation) => {
+            err ? res.send(err)
+            : res.render('show.ejs', {
+                specificOccupationalData: specificOccupation
+            })
+        })
+    }
+    catch (err) {
+        res.send(err.message)
+    }
 })
 //create a new occupation
-router.get('/createoccupation', async (req, res) => {
+router.post('/createoccupation', async (req, res) => {
     res.render('new.ejs', {
     })
 })
 //edit an occupation //are editing an occupation and updating an occupation the same thing?
 router.get('/editoccupation/:id', async (req, res) => {
     res.render('edit.ejs', {
-        specificoccupationaldata: seeOccupationalData[req.params.id],
+        specificoccupationaldata: allOccupations[req.params.id],
+        experts: allExperts[req.params.id],
     })
 })
 //update an occupation //are updating an occupation and editing an occupation the same thing?
@@ -44,12 +59,8 @@ router.delete('/removeoccupation', async (req, res) => {
     res.render('delete.ejs')//I ADDED THIS EJS ROUTE
 })
 
-// for ejs templates
-app.set('view engine', 'ejs');
 
-app.get('/', function(req, res){
-    res.render('index',{welcome: "Hard Hat Academy",title:"homepage"});
-});
+
 
 // app.get('//:indexOfFruitsArray',(req, res){
 //     res.render('show.ejs');

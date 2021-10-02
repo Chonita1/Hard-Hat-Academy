@@ -5,20 +5,18 @@
     <title>Occupations Show Page</title>
 </head>
 <body>
-    <h1>What's It Like To Be a <%= Occupations.title %></h1>
+    <h1>What's It Like To Be a <%= specificOccupationalData.title %></h1>
     
-    <a href="/occupation">Back to Occupations</a>
-    <h1><%=occupation.title%></h1>
+    <a href="/exploreoccupations">Back to Occupations</a>
+    <h1><%=specificOccupationalData.description%></h1>
     <div>
-         <img src="<%=occupation.img%>"> <!--what should go here? NOt an image file -->
-        <p><%=occupation.title%></p>
-        <%if(product.qty <= 0){%>
-            <p>Out Of Stock</p> 
-            <%}else{%>
-                <p><%=product.qty%>remaining</p>    
-            <%}%>
-            <button>BUY</button>
-            <a href="/products/">Edit This</a>
+        <!-- this is the photo URL -->
+         <img src="<%=specificOccupationalData.url%>">
+        <p>Meet <%=specificOccupationalData.expert.name%></p>
+        <p><%=specificOccupationalData.expert.profile%></p>
+
+            <!-- <button>BUY </button> -->
+            <a href="/editoccupations/<%= specificOccupationalData._id %>">Edit This</a>
     </div>
     <form>
         <button>Delete</button>

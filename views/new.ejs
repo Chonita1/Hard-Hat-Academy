@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New Content Page</title>
+    <title>New Page</title>
 </head>
 <body>
+    <h1>New Occupation</h1>
+    <form action='/occupation/<%=product.id%>?_method=POST'>
+        <label for='title'>Title:
+            <input type="text" title= "title" required= "true"
+            value="<%occupation%>"
+        <!-- </label> -->
+        </label>
+        <button> Submit </button>
+    </form>
     
 </body>
 </html>

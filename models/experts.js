@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 
 //creates a shorthand for mongoose
 const expertsSchema = new mongoose.Schema ({
-    name: {type: String, required: true, unique: true},
-    profile: {type: String, requied: true},
+    name: {type: String, required: true},
+    profile: {type: String, required: true},
     occupation: {type: String, required: true},
     email: {type: String, required: true, unique: true},
     phone: {type: String, required: true, unique: true},
@@ -14,4 +14,4 @@ const expertsSchema = new mongoose.Schema ({
 },
 { collection: 'Experts'}
 )
-module.exports = mongoose.model('Experts', expertsSchema)
+module.exports = expertsSchema

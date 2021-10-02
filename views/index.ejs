@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><%= Welcome to Hard Hat Academy! %></title>
+    <title> Welcome to Hard Hat Academy!</title>
 </head>
 <body>
     <h1>Browse through our video list and find your passion!</h1>
@@ -16,10 +16,10 @@
         it's really like to work in that occupation, what it pays, and how you can get in on it!</p>
     <h3>
         <ul class="occupations">
-        <%for (let i = 0; i < occupation.length; i++) {%>
+        <%for (let i = 0; i < Object.keys(occupations).length; i++) {%>
             <li>
-                <%console.log(occupation[i].title) %>
-                <a href='/occupation/<%= occupation[i].id %>' ></a><%= occupatoin[i].title %></a>
+                <%console.log(occupations[i].title) %>
+                <a href='/explore/<%= occupations[i]._id %>' ><%= occupations[i].title %></a>
             </li>      
       <%  } %>
         </ul>  

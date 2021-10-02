@@ -6,13 +6,13 @@
 </head>
 <body>
     <h1>Edit Occupation</h1>
-    <form action='/occupation/<%=product.id%>?_method=PUT'>
+    <form action='/updateoccupation/<%=specificOccupationalData._id%>?_method=PUT'>
         <label for='title'>Title:
             <input type="text" title= "title" required= "true"
             value="<%occupation%>"
         <!-- </label> -->
         </label>
     </form>
-    
+    <button> Submit </button>
 </body>
 </html>
