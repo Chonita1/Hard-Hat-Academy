@@ -51,12 +51,17 @@ router.get('/editoccupation/:id', async (req, res) => {
 })
 //update an occupation //are updating an occupation and editing an occupation the same thing?
 router.put('/updateoccupation/:id', async (req, res) => {
-    res.render('edit.ejs')//AM I REFERENCING THE RIGHT FILE?
-
+    res.render('edit.ejs', {
+        specificoccupationaldata: allOccupations[req.params.id],
+        experts: allExperts[req.params.id],
+    })
 })
 //delete an occupation
-router.delete('/removeoccupation', async (req, res) => {
-    res.render('delete.ejs')//I ADDED THIS EJS ROUTE
+router.delete('/removeoccupation/:id', async (req, res) => {
+    res.render('delete.ejs', {
+        specificoccupationaldata: allOccupations[req.params.id],
+        experts: allExperts[req.params.id],
+    })
 })
 
 

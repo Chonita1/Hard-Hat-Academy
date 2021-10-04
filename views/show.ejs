@@ -5,7 +5,7 @@
     <title>Occupations Show Page</title>
 </head>
 <body>
-    <h1>What's It Like To Be a <%= specificOccupationalData.title %></h1>
+    <h1>I'm Interested in <%= specificOccupationalData.title %></h1>
     
     <a href="/exploreoccupations">Back to Occupations</a>
     <h1><%=specificOccupationalData.description%></h1>
@@ -15,7 +15,6 @@
         <p>Meet <%=specificOccupationalData.expert.name%></p>
         <p><%=specificOccupationalData.expert.profile%></p>
 
-            <!-- <button>BUY </button> -->
             <a href="/editoccupations/<%= specificOccupationalData._id %>">Edit This</a>
     </div>
     <form>
