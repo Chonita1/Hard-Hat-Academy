@@ -10,13 +10,16 @@
     <a href="/exploreoccupations">Back to Occupations</a>
     <h1><%=specificOccupationalData.description%></h1>
     <div>
-        <!-- this is the photo URL -->
-         <img src="<%=specificOccupationalData.url%>">
+         <img src="<%=specificOccupationalData.expert.pictureUrl%>">
         <p>Meet <%=specificOccupationalData.expert.name%></p>
         <p><%=specificOccupationalData.expert.profile%></p>
 
-            <a href="/editoccupations/<%= specificOccupationalData._id %>">Edit This</a>
+            <a href="/editoccupation/<%= specificOccupationalData._id %>">Edit This</a>
     </div>
+    <iframe width="560" height="315" 
+    src="<%=specificOccupationalData.videoUrl%>" title="YouTube video player" 
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
     <form>
         <button>Delete</button>
     </form>

@@ -10,7 +10,7 @@ const expertsSchema = new mongoose.Schema ({
     phone: {type: String, required: true, unique: true},
     zipcode: {type: String, required: true},
     state: {type: String, required: true},
-    url:   {type: String, required: true, unique: true}
+    pictureUrl:   {type: String, required: true, unique: true}
 },
 { collection: 'Experts'}
 )

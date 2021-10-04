@@ -11,7 +11,7 @@ const occupationalDataSchema = new mongoose.Schema ({
     description: {type: String, required: true},
     training: {type: String, required: true},
     wage: {type: String, required: true},
-    url:   {type: String, required: true, unique: true}
+    videoUrl:   {type: String, required: true, unique: true}
 },
 { collection: 'Occupations'}
 )
