@@ -2,18 +2,17 @@ const express = require('express');
 require('dotenv').config()
 const expertsController = require('./controllers/expertsController')
 
-
-
 // we required express up above now we need to call our app
 const app = express();
+app.use(express.static('public'))
 
 const mongoose = require('mongoose');
-const Experts = require('./models/experts')
 const Occupations = require('./models/occupationalData');
 const seedOccupationalData = require('./models/seedOccupationalData');
 
 //this is the db port
 const PORT = process.env.PORT || 3001
+const SERVER_URL = process.env.SERVER_URL || "localhost:3000"
 
 //Connect to Database
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/hardhat'  //process.env.MONGODB_URI

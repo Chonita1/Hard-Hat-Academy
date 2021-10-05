@@ -7,10 +7,18 @@
 <body>
     <h1>Edit Occupation</h1>
     <form action='/updateoccupation/<%=specificOccupationalData._id%>?_method=PUT'>
-        <label>Title:
-            <input type="text" title="title" required="true"
-            value="<%occupation%>">
-        </label>
+        <div>
+            <label>Title:
+                <input type="text" title="title" required="true"
+                value="<%specificOccupationalData.title%>">
+            </label>
+        </div>    
+        <div>
+            <label>Description:
+                <input type="text" required="true"
+                value="<%specificOccupationalData.description%>">
+            </label>
+        </div>
         <button> Submit </button>   
     </form>
     

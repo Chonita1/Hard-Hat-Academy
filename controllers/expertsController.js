@@ -2,7 +2,8 @@ const { application } = require('express')  // Return to this code. Is it needed
 const express = require('express')
 const router = express.Router()
 const Occupations = require('../models/occupationalData')
-const seedOccupationalData = require('../models/seedOccupationalData')
+// const seedOccupationalData = require('../models/seedOccupationalData')
+const SERVER_URL = process.env.SERVER_URL || "localhost:3000"
 
 
 //Middlewares
@@ -29,7 +30,8 @@ router.get('/explore/:id', (req, res) => {
         Occupations.findById(req.params.id, (err, specificOccupation) => {
             err ? res.send(err)
             : res.render('show.ejs', {
-                specificOccupationalData: specificOccupation
+                specificOccupationalData: specificOccupation,
+                serverUrl: SERVER_URL
             })
         })
     }
@@ -44,10 +46,17 @@ router.post('/createoccupation', async (req, res) => {
 })
 //edit an occupation //are editing an occupation and updating an occupation the same thing?
 router.get('/editoccupation/:id', async (req, res) => {
-    res.render('edit.ejs', {
-        specificoccupationaldata: allOccupations[req.params.id],
-        experts: allExperts[req.params.id],
-    })
+    try{
+        Occupations.findById(req.params.id, (err, specificOccupation) => {
+            err ? res.send(err)
+            : res.render('edit.ejs', {
+                specificOccupationalData: specificOccupation
+            })
+        })
+    }
+    catch (err) {
+        res.send(err.message)
+    }
 })
 //update an occupation //are updating an occupation and editing an occupation the same thing?
 router.put('/updateoccupation/:id', async (req, res) => {
