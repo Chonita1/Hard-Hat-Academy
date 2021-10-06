@@ -9,7 +9,7 @@ module.exports = [
             name: "Jason Hammer",
             occupation: "Welder",
             profile: "Jason works at Rhoads Industries and has been welding for five years. Jason is passionate about welding and does it on the side, creating custom exhausts for his own vehicles and for other people too",
-            pictureUrl:  "../expert_images/UnderWaterWelding3.jpeg",
+            pictureUrl:  "../expert_images/Welding.jpg",
             email: "jasonh@hardhatacademy.com",
             phone: "312-555-1212",
             zipcode: "30001",

@@ -5,60 +5,90 @@
     <title>Edit Page</title>
 </head>
 <body>
-    <h1>Edit Occupation</h1>
-    <form action='/updateoccupation/<%=specificOccupationalData._id%>?_method=PUT'>
+    <h1>Edit <%= specificOccupationalData.title%></h1>
+    <form action='/updateoccupation/<%= specificOccupationalData._id%>?_method=PUT'>
         <div>
             <label>Title:
                 <input type="text" title="title" required="true"
-                value="<%specificOccupationalData.title%>">
+                value="<%= specificOccupationalData.title%>">
             </label>
         </div>    
         <div>
             <label>Description:
                 <input type="text" required="true"
-                value="<%specificOccupationalData.description%>">
+                value="<%= specificOccupationalData.description%>">
             </label>
         </div>
         <div>
             <label>Training:
                 <input type="text" required="true"
-                value="<%specificOccupationalData.training%>">
+                value="<%= specificOccupationalData.training%>">
             </label>
         </div>
         <div>
             <label>Wage:
                 <input type="text" required="true"
-                value="<%specificOccupationalData.wage%>">
+                value="<%= specificOccupationalData.wage%>">
             </label>
         </div>
         <div>
             <label>VideoUrl:
                 <input type="text" title="title" required="true"
-                value="<%specificOccupationalData.videoUrl%>">
-            </label>
-        </div>
-        <div>
-            <label>Expert:
-                <input type="text" title="title" required="true"
-                value="<%specificOccupationalData.expert%>">
+                value="<%= specificOccupationalData.videoUrl%>">
             </label>
         </div>
         <div>
             <label>ExpertName:
                 <input type="text" title="title" required="true"
-                value="<%specificOccupationalData.expert.name%>">
+                value="<%= specificOccupationalData.expert.name%>">
             </label>
         </div>
         <div>
-            <label>Title:
+            <label>ExpertOccupation:
                 <input type="text" title="title" required="true"
-                value="<%specificOccupationalData.title%>">
+                value="<%= specificOccupationalData.expert.occupation%>">
             </label>
         </div>
         <div>
-            <label>Title:
+            <label>ExpertProfile:
                 <input type="text" title="title" required="true"
-                value="<%specificOccupationalData.title%>">
+                value="<%= specificOccupationalData.expert.profile%>">
+            </label>
+        </div>
+        <div>
+            <label>ExpertPictureUrl:
+                <input type="text" title="title" required="true"
+                value="<%= specificOccupationalData.expert.pictureUrl%>">
+            </label>
+        </div>
+        <div>
+            <label>ExpertEmail:
+                <input type="text" title="title" required="true"
+                value="<%= specificOccupationalData.expert.email%>">
+            </label>
+        </div>
+        <div>
+            <label>ExpertPhone:
+                <input type="text" title="title" required="true"
+                value="<%= specificOccupationalData.expert.phone%>">
+            </label>
+        </div>
+        <div>
+            <label>ExpertProfile:
+                <input type="text" title="title" required="true"
+                value="<%= specificOccupationalData.expert.profile%>">
+            </label>
+        </div>
+        <div>
+            <label>ExpertZipCode:
+                <input type="text" title="title" required="true"
+                value="<%= specificOccupationalData.expert.zipcode%>">
+            </label>
+        </div>
+        <div>
+            <label>ExpertState:
+                <input type="text" title="title" required="true"
+                value="<%= specificOccupationalData.expert.state%>">
             </label>
         </div>
         <button> Submit </button>   

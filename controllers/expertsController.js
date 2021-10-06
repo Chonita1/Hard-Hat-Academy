@@ -45,7 +45,7 @@ router.post('/createoccupation', async (req, res) => {
     })
 })
 //edit an occupation //are editing an occupation and updating an occupation the same thing?
-router.get('/editoccupation/:id', async (req, res) => {
+router.get('/editoccupation/:id', (req, res) => {
     try{
         Occupations.findById(req.params.id, (err, specificOccupation) => {
             err ? res.send(err)
@@ -60,10 +60,16 @@ router.get('/editoccupation/:id', async (req, res) => {
 })
 //update an occupation //are updating an occupation and editing an occupation the same thing?
 router.put('/updateoccupation/:id', async (req, res) => {
-    res.render('edit.ejs', {
-        specificoccupationaldata: allOccupations[req.params.id],
-        experts: allExperts[req.params.id],
-    })
+    try{
+        Occupations.findByIdandUpdate(req.params.id, req.body, {new:true}, {new:true},
+            (err, specificOccupation) => {
+                err ? res.send(err)
+                : res.redirect('./explore/' + req.params.id)
+            })    
+    }
+    catch (err) {
+        res.send(err.message)
+    }
 })
 //delete an occupation
 router.delete('/removeoccupation/:id', async (req, res) => {
