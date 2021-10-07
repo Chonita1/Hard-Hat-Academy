@@ -5,9 +5,6 @@ const Occupations = require('../models/occupationalData')
 // const seedOccupationalData = require('../models/seedOccupationalData')
 const SERVER_URL = process.env.SERVER_URL || "localhost:3000"
 
-
-//Middlewares
-
 //list/explore all occupations
 router.get('/exploreoccupations', (req, res) => {
     try{
@@ -59,12 +56,32 @@ router.get('/editoccupation/:id', (req, res) => {
     }
 })
 //update an occupation //are updating an occupation and editing an occupation the same thing?
-router.put('/updateoccupation/:id', async (req, res) => {
-    try{
-        Occupations.findByIdandUpdate(req.params.id, req.body, {new:true}, {new:true},
-            (err, specificOccupation) => {
+router.put('/updateoccupation/:id', (req, res) => {
+    // console.log(req.body)
+    //res.send("done")
+    try {
+        Occupations.findByIdAndUpdate(req.params.id,
+            {
+                title: req.body.title,
+                description: req.body.description,
+                training: req.body.training,
+                wage: req.body.wage,
+                videoUrl: req.body.videoUrl,
+                
+                expert: {
+                        name: req.body.expertname,
+                        occupation: req.body.occupation,
+                        profile: req.body.profile,
+                        pictureUrl: req.body.pictureUrl,
+                        email: req.body.email,
+                        phone: req.body.phone,
+                        zipcode: req.body.zipcode,
+                        state: req.body.state
+                }
+            },  {new:true},
+                (err, specificOccupation) => {
                 err ? res.send(err)
-                : res.redirect('./explore/' + req.params.id)
+                : res.redirect('/explore/' + req.params.id)
             })    
     }
     catch (err) {
@@ -79,13 +96,6 @@ router.delete('/removeoccupation/:id', async (req, res) => {
     })
 })
 
-
-
-
-// app.get('//:indexOfFruitsArray',(req, res){
-//     res.render('show.ejs');
-
-// });
 
 
 module.exports = router 

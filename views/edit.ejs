@@ -3,93 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Page</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
     <h1>Edit <%= specificOccupationalData.title%></h1>
-    <form action='/updateoccupation/<%= specificOccupationalData._id%>?_method=PUT'>
+    <form action='/updateoccupation/<%= specificOccupationalData._id%>?_method=PUT'
+        method='POST'>
         <div>
             <label>Title:
-                <input type="text" title="title" required="true"
+                <input type="text" name="title" required="true"
                 value="<%= specificOccupationalData.title%>">
-            </label>
+            </label><br/>
         </div>    
         <div>
             <label>Description:
-                <input type="text" required="true"
+                <input type="text" name="description" required="true"
                 value="<%= specificOccupationalData.description%>">
-            </label>
+            </label><br/>
         </div>
         <div>
             <label>Training:
-                <input type="text" required="true"
+                <input type="text" name="training" required="true"
                 value="<%= specificOccupationalData.training%>">
-            </label>
+            </label><br/>
         </div>
         <div>
             <label>Wage:
-                <input type="text" required="true"
+                <input type="text" name="wage" required="true"
                 value="<%= specificOccupationalData.wage%>">
-            </label>
+            </label><br/>
         </div>
         <div>
             <label>VideoUrl:
-                <input type="text" title="title" required="true"
+                <input type="text" name="videourl" required="true"
                 value="<%= specificOccupationalData.videoUrl%>">
-            </label>
+            </label><br/>
         </div>
         <div>
             <label>ExpertName:
-                <input type="text" title="title" required="true"
+                <input type="text" name="name" required="true"
                 value="<%= specificOccupationalData.expert.name%>">
-            </label>
+            </label><br/>
         </div>
         <div>
             <label>ExpertOccupation:
-                <input type="text" title="title" required="true"
+                <input type="text" name="occupation" required="true"
                 value="<%= specificOccupationalData.expert.occupation%>">
-            </label>
+            </label><br/>
         </div>
         <div>
             <label>ExpertProfile:
-                <input type="text" title="title" required="true"
+                <input type="text" name="profile" required="true"
                 value="<%= specificOccupationalData.expert.profile%>">
-            </label>
+            </label><br/>
         </div>
         <div>
             <label>ExpertPictureUrl:
-                <input type="text" title="title" required="true"
+                <input type="text" name="pictureurl" required="true"
                 value="<%= specificOccupationalData.expert.pictureUrl%>">
-            </label>
+            </label><br/>
         </div>
         <div>
             <label>ExpertEmail:
-                <input type="text" title="title" required="true"
+                <input type="text" name="email" required="true"
                 value="<%= specificOccupationalData.expert.email%>">
-            </label>
+            </label><br/>
         </div>
         <div>
             <label>ExpertPhone:
-                <input type="text" title="title" required="true"
+                <input type="text" name="phone" required="true"
                 value="<%= specificOccupationalData.expert.phone%>">
-            </label>
-        </div>
-        <div>
-            <label>ExpertProfile:
-                <input type="text" title="title" required="true"
-                value="<%= specificOccupationalData.expert.profile%>">
-            </label>
+            </label><br/>
         </div>
         <div>
             <label>ExpertZipCode:
-                <input type="text" title="title" required="true"
+                <input type="text" name="zipcode" required="true"
                 value="<%= specificOccupationalData.expert.zipcode%>">
-            </label>
+            </label><br/>
         </div>
         <div>
             <label>ExpertState:
-                <input type="text" title="title" required="true"
+                <input type="text" name="state" required="true"
                 value="<%= specificOccupationalData.expert.state%>">
-            </label>
+            </label><br/>
         </div>
         <button> Submit </button>   
     </form>

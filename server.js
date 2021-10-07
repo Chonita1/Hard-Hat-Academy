@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config()
+const methodOverride = require('method-override')
 const expertsController = require('./controllers/expertsController')
 
 // we required express up above now we need to call our app
@@ -35,6 +36,11 @@ db.on('disconnect', () => {
 db.on('error', (error) => {
     console.log('mongoose error', error);
 })
+
+// middleware
+app.use(methodOverride('_method'))
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 // for ejs templates
 app.set('view engine', 'ejs');
