@@ -1,4 +1,4 @@
-const { application } = require('express')  // Return to this code. Is it needed?
+// const { application } = require('express') Return to this code. Is it needed?
 const express = require('express')
 const router = express.Router()
 const Occupations = require('../models/occupationalData')
@@ -37,10 +37,38 @@ router.get('/explore/:id', (req, res) => {
     }
 })
 //create a new occupation
-router.post('/createoccupation', async (req, res) => {
-    res.render('new.ejs', {
-    })
+router.post('/createoccupation', (req, res) => {
+    try{
+        Occupations.insertOne(
+            {
+                title: req.body.title,
+                description: req.body.description,
+                training: req.body.training,
+                wage: req.body.wage,
+                videoUrl: req.body.videoUrl,
+                
+                expert: {
+                        name: req.body.name,
+                        occupation: req.body.occupation,
+                        profile: req.body.profile,
+                        pictureUrl: req.body.pictureurl,
+                        email: req.body.email,
+                        phone: req.body.phone,
+                        zipcode: req.body.zipcode,
+                        state: req.body.state
+                }
+            },
+            (err, specificOccupation) => {
+                err ? res.send(err)
+                : res.redirect('/exploreoccupations')
+            })
+        
+    }
+    catch (err) {
+        res.send(err.message)
+    }    
 })
+
 //edit an occupation //are editing an occupation and updating an occupation the same thing?
 router.get('/editoccupation/:id', (req, res) => {
     try{
@@ -69,10 +97,10 @@ router.put('/updateoccupation/:id', (req, res) => {
                 videoUrl: req.body.videoUrl,
                 
                 expert: {
-                        name: req.body.expertname,
+                        name: req.body.name,
                         occupation: req.body.occupation,
                         profile: req.body.profile,
-                        pictureUrl: req.body.pictureUrl,
+                        pictureUrl: req.body.pictureurl,
                         email: req.body.email,
                         phone: req.body.phone,
                         zipcode: req.body.zipcode,
