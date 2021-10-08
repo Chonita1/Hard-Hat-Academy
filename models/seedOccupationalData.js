@@ -49,5 +49,22 @@ module.exports = [
             zipcode: "21201",
             state: "md"
         }
+    },
+        {
+            title: "Communications Equipment Installers and Repairers",
+            description: "Communications Equipment Installers and Repairers install, maintain, and repair the tower networks and systems used in cellular telecommunications and mobile broadband.",
+            training: "An associate's degree or certificate program is typical.",
+            wage: "Median annual salary is $57,720",
+            videoUrl: "https://www.youtube.com/embed/C8L0xQ4MLrc",
+            expert: {
+                name: "Rene Blake",
+                occupation: "Field Technical Specialist",
+                profile: "Rene is passionate about technology and describes himself as a 'gadget guy'. He loves his job and the people he works with.",
+                pictureUrl:  "../expert_images/UnderWaterWelding2.jpeg",
+                email: "rblake@hardhatacademy.com",
+                phone: "301-555-1212",
+                zipcode: "32111",
+                state: "la"
+            }
     }]
     

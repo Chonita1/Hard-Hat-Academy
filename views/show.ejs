@@ -21,8 +21,14 @@
     src="<%=specificOccupationalData.videoUrl%>" title="YouTube video player" 
     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen></iframe>
-    <form>
-        <button>Delete</button>
+    
+    <h1>Delete <%= specificOccupationalData.title%></h1>
+    <form action='/deleteoccupation/<%= specificOccupationalData._id%>?_method=DELETE'
+        method='POST'>
+        <div> 
+            <button>Delete</button>
+        </div>
     </form>
+    
 </body>
 </html>

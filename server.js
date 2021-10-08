@@ -47,10 +47,16 @@ app.set('view engine', 'ejs');
 
 app.use('/', expertsController)
 
+app.get('/', (req, res) => {
+    res.redirect('/exploreoccupations')
+})
+
 app.get('/expertdata', async (req, res) => {
     await Occupations.insertMany(seedOccupationalData)
     res.send('Occupational Data')    
+
 })
+
 
 
 app.listen(PORT, () => {

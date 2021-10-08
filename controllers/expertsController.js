@@ -2,6 +2,7 @@
 const express = require('express')
 const router = express.Router()
 const Occupations = require('../models/occupationalData')
+
 // const seedOccupationalData = require('../models/seedOccupationalData')
 const SERVER_URL = process.env.SERVER_URL || "localhost:3000"
 
@@ -36,16 +37,20 @@ router.get('/explore/:id', (req, res) => {
         res.send(err.message)
     }
 })
-//create a new occupation
+// user clicks on create occupation and gets the form
+router.get('/getnewoccupationform', (req, res) => {
+    res.render('new.ejs')
+})
+// user actually submits form to create a new occupation
 router.post('/createoccupation', (req, res) => {
     try{
-        Occupations.insertOne(
+        Occupations.create(
             {
                 title: req.body.title,
                 description: req.body.description,
                 training: req.body.training,
                 wage: req.body.wage,
-                videoUrl: req.body.videoUrl,
+                videoUrl: req.body.videourl,
                 
                 expert: {
                         name: req.body.name,
@@ -117,11 +122,16 @@ router.put('/updateoccupation/:id', (req, res) => {
     }
 })
 //delete an occupation
-router.delete('/removeoccupation/:id', async (req, res) => {
-    res.render('delete.ejs', {
-        specificoccupationaldata: allOccupations[req.params.id],
-        experts: allExperts[req.params.id],
-    })
+router.delete('/deleteoccupation/:id', (req, res) => {
+    try {
+        Occupations.findByIdAndDelete(req.params.id, function (err) {
+            err ? res.send(err)
+            : res.redirect('/exploreoccupations')
+        });
+    }
+    catch (err) {
+        res.send(err.message)
+    }
 })
 
 
