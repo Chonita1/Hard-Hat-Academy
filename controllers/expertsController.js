@@ -86,10 +86,10 @@ router.get('/editoccupation/:id', (req, res) => {
             })
         }
         catch (err) {
-            res.send(err.message)
-            } else {
-                res.redirect('/exploreoccupations')
-            }
+            res.send(err.message)   
+            } 
+        } else {
+            res.redirect('/exploreoccupations')
     }
 })
 
@@ -128,15 +128,19 @@ router.put('/updateoccupation/:id', (req, res) => {
 })
 //delete an occupation
 router.delete('/deleteoccupation/:id', (req, res) => {
-    try {
-        Occupations.findByIdAndDelete(req.params.id, function (err) {
-            err ? res.send(err)
-            : res.redirect('/exploreoccupations')
-        });
-    }
-    catch (err) {
-        res.send(err.message)
-    }
+    if(req.session.loggedIn) {
+        try {
+            Occupations.findByIdAndDelete(req.params.id, function (err) {
+                err ? res.send(err)
+                : res.redirect('/exploreoccupations')
+            });
+        }
+        catch (err) {
+            res.send(err.message)
+        } 
+            } else {
+                res.redirect('/exploreoccupations')
+        }
 })
 
 
