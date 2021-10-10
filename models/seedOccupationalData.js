@@ -13,7 +13,7 @@ module.exports = [
             email: "jasonh@hardhatacademy.com",
             phone: "312-555-1212",
             zipcode: "30001",
-            state: "il"
+            state: "IL"
         }
     },
     {
@@ -30,7 +30,7 @@ module.exports = [
             email: "johndow@ehardhatacademye.com",
             phone: "412-555-1212",
             zipcode: "20001",
-            state: "pa" 
+            state: "PA" 
         }
     },
     {
@@ -47,7 +47,7 @@ module.exports = [
             email: "tsauer@hardhatacademy.com",
             phone: "301-555-1212",
             zipcode: "21201",
-            state: "md"
+            state: "MD"
         }
     },
         {
@@ -57,14 +57,14 @@ module.exports = [
             wage: "Median annual salary is $57,720",
             videoUrl: "https://www.youtube.com/embed/C8L0xQ4MLrc",
             expert: {
-                name: "Rene Blake",
-                occupation: "Field Technical Specialist",
-                profile: "Rene is passionate about technology and describes himself as a 'gadget guy'. He loves his job and the people he works with.",
-                pictureUrl:  "../expert_images/UnderWaterWelding2.jpeg",
-                email: "rblake@hardhatacademy.com",
+                name: "Brittany Doe",
+                occupation: "Communications Technicianl",
+                profile: "Brittany loves that her work does not take place behind four walls and she gets to interact with customers from all walks of life on a daily basis. Best of all, she is able to provide for her family and her family's future.",
+                pictureUrl:  "../expert_images/CableWorker.jpg",
+                email: "brittanyDoe@hardhatacademy.com",
                 phone: "301-555-1212",
                 zipcode: "32111",
-                state: "la"
+                state: "pa"
             }
     }]
     

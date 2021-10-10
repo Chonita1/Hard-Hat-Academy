@@ -76,19 +76,24 @@ router.post('/createoccupation', (req, res) => {
 
 //edit an occupation //are editing an occupation and updating an occupation the same thing?
 router.get('/editoccupation/:id', (req, res) => {
-    try{
-        Occupations.findById(req.params.id, (err, specificOccupation) => {
-            err ? res.send(err)
-            : res.render('edit.ejs', {
-                specificOccupationalData: specificOccupation
+    if(req.session.loggedIn) {
+        try{
+            Occupations.findById(req.params.id, (err, specificOccupation) => {
+                err ? res.send(err)
+                : res.render('edit.ejs', {
+                    specificOccupationalData: specificOccupation
+                })
             })
-        })
-    }
-    catch (err) {
-        res.send(err.message)
+        }
+        catch (err) {
+            res.send(err.message)
+            } else {
+                res.redirect('/exploreoccupations')
+            }
     }
 })
-//update an occupation //are updating an occupation and editing an occupation the same thing?
+
+//update an occupation.
 router.put('/updateoccupation/:id', (req, res) => {
     // console.log(req.body)
     //res.send("done")

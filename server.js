@@ -1,7 +1,9 @@
 const express = require('express');
 require('dotenv').config()
 const methodOverride = require('method-override')
+const session = require('express-session')
 const expertsController = require('./controllers/expertsController')
+
 
 // we required express up above now we need to call our app
 const app = express();
@@ -41,6 +43,9 @@ db.on('error', (error) => {
 app.use(methodOverride('_method'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+app.use(session({
+    secret:'Admin Only', name:'adminSessionID', saveUninitialized:false
+}))
 
 // for ejs templates
 app.set('view engine', 'ejs');
@@ -52,8 +57,13 @@ app.get('/', (req, res) => {
 })
 
 app.get('/expertdata', async (req, res) => {
-    await Occupations.insertMany(seedOccupationalData)
-    res.send('Occupational Data')    
+    if(req.session.loggedIn) {
+        await Occupations.insertMany(seedOccupationalData)
+        res.send('Occupational Data')        
+    } else {
+        res.redirect('/exploreoccupations')
+    }
+    
 
 })
 
