@@ -87,9 +87,9 @@ router.get('/editoccupation/:id', (req, res) => {
         }
         catch (err) {
             res.send(err.message)   
-            } 
-        } else {
-            res.redirect('/exploreoccupations')
+        } 
+    } else {
+        res.redirect('/exploreoccupations')
     }
 })
 
@@ -138,9 +138,9 @@ router.delete('/deleteoccupation/:id', (req, res) => {
         catch (err) {
             res.send(err.message)
         } 
-            } else {
-                res.redirect('/exploreoccupations')
-        }
+    } else {
+        res.redirect('/exploreoccupations')
+    }
 })
 
 

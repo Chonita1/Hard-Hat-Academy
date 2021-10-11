@@ -62,9 +62,9 @@ module.exports = [
                 profile: "Brittany loves that her work does not take place behind four walls and she gets to interact with customers from all walks of life on a daily basis. Best of all, she is able to provide for her family and her family's future.",
                 pictureUrl:  "../expert_images/CableWorker.jpg",
                 email: "brittanyDoe@hardhatacademy.com",
-                phone: "301-555-1212",
+                phone: "215-555-1212",
                 zipcode: "32111",
-                state: "pa"
+                state: "PA"
             }
     }]
     
