@@ -43,7 +43,7 @@ module.exports = [
             name: "Trent Sauer",
             occupation: "CAD Operator",
             profile: "Trent loves everything CAD and has been working in the industry for 19 years. ",
-            pictureUrl:  "../expert_images/UnderWaterWelding2.jpeg",
+            pictureUrl:  "../expert_images/CADWorker.jpg",
             email: "tsauer@hardhatacademy.com",
             phone: "301-555-1212",
             zipcode: "21201",

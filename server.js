@@ -2,6 +2,7 @@ const express = require('express');
 require('dotenv').config()
 const methodOverride = require('method-override')
 const session = require('express-session')
+const bodyParser = require('body-parser')
 const expertsController = require('./controllers/expertsController')
 
 
@@ -65,6 +66,20 @@ app.get('/expertdata', async (req, res) => {
     }
     
 
+})
+
+app.post('/authenticate', (req, res) => {
+    if(req.body.username === 'Test' && req.body.password === 'password1') {
+        req.session.loggedIn = true
+        res.redirect('/exploreoccupations')
+    } else {
+        res.sendStatus(401)
+    }
+})
+
+app.get('/logout',(req,res) => {
+    req.session.destroy((err) => {})
+    res.redirect('/exploreoccupations')
 })
 
 

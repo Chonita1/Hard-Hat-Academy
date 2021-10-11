@@ -26,8 +26,32 @@
             </li>      
       <%  } %>
         </ul> 
-    <a href="/getnewoccupationform">Create Occupation</a> 
+    <p>
+        <a href="/getnewoccupationform">Create Occupation</a> 
+    </p>
 
-
+    <%if(loggedIn === false){%>       
+        <h6>Admin Login</h6>
+        <form action='/authenticate' method='POST'>
+            <div>
+                <label>Username:
+                    <input type="text" name="username" required="true">
+                </label><br/>
+            </div>
+            <div>
+                <label>Password:
+                    <input type="password" name="password" required="true">
+                </label><br/>
+            </div>
+            <div>
+                <button>Submit</button>
+            </div> 
+        </form>
+    <%}else{%>
+        <br>
+        <p>
+            <a href="/logout">Logout</a> 
+        </p>
+    <%}%>    
 </body>
 </html>
