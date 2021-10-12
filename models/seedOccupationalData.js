@@ -42,7 +42,7 @@ module.exports = [
         expert: {
             name: "Trent Sauer",
             occupation: "CAD Operator",
-            profile: "Trent loves everything CAD and has been working in the industry for 19 years. ",
+            profile: "Trent loves everything CAD. His favorite aspect of the job is seeing a machine product from the design phase to sseeing it on store shelves an knowing he played an important part in the process.",
             pictureUrl:  "../expert_images/CADWorker.jpg",
             email: "tsauer@hardhatacademy.com",
             phone: "301-555-1212",
@@ -66,5 +66,40 @@ module.exports = [
                 zipcode: "32111",
                 state: "PA"
             }
+    },
+       {
+            title: "Wind Turbine Technician",
+            description: "Wind turbine service technicians install, maintain, and repair wind turbines. They generally work outdoors, in confined spaces, and often at great heights.",
+            training: "Attending a technical school and on-the-job training is typical.",
+            wage: "Median annual salary is $56,230",
+            videoUrl: "https://www.youtube.com/embed/xUjCD-fFU9k?start=24",
+            expert: {
+                name: "Jessica Kilroy",
+                occupation: "Wind Turbine Technician",
+                profile: "Jessica took her passion for rock climbing and found her perfect career. Shes says the view from 350 feet up is 'expansive and just awesome!'",
+                pictureUrl:  "../expert_images/WindTurbineTechnician2.png",
+                email: "jkilroy@hardhatacademy.com",
+                phone: "315-555-1212",
+                zipcode: "42111",
+                state: "MA"
+            }
+    },
+        {
+            title: "Elevator Installers and Repairers",
+            description: "Elevator and escalator installers and repairers install, maintain, and fix elevators, escalators, moving walkways, and other lifts.",
+            training: "a high school diploma or equivalent and nearly all participat in an apprenticeship. Most states require workers to be licensed.",
+            wage: "Median annual salary is $88,540",
+            videoUrl: "https://www.youtube.com/embed/tkM7rhRY-ag",
+            expert: {
+                name: "Eddie Reviera",
+                occupation: "Elevator Technician",
+                profile: "Eddie loves to build things and says if you love working with your hands, a team atmosphere, and you'd like to make a great living for you and your family, become an elevator technician",
+                pictureUrl:  "../expert_images/Elevator&EscalatorInstallers.jpg",
+                email: "eriviera@hardhatacademy.com",
+                phone: "718-555-1212",
+                zipcode: "11210",
+                state: "NY"
+            }
+        
     }]
     
