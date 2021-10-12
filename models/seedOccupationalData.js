@@ -1,7 +1,7 @@
 module.exports = [
     {
         title: "Welding",
-        description: "use hand-held or remotely controlled equipment to join, repair, or cut metal parts and products.",
+        description: "Welders use hand-held or remotely controlled equipment to join, repair, or cut metal parts and products.",
         training:  "A high school diploma or equivalent, plus technical and on-the-job training. Apprenticeship is a common approach.",
         wage: "The median annual wage is $44,190",
         videoUrl: "https://www.youtube.com/embed/qggvdb8_xB8",
@@ -50,24 +50,24 @@ module.exports = [
             state: "MD"
         }
     },
-        {
-            title: "Communications Equipment Installers and Repairers",
-            description: "Communications Equipment Installers and Repairers install, maintain, and repair the tower networks and systems used in cellular telecommunications and mobile broadband.",
-            training: "An associate's degree or certificate program is typical.",
-            wage: "Median annual salary is $57,720",
-            videoUrl: "https://www.youtube.com/embed/C8L0xQ4MLrc",
-            expert: {
-                name: "Brittany Doe",
-                occupation: "Communications Technicianl",
-                profile: "Brittany loves that her work does not take place behind four walls and she gets to interact with customers from all walks of life on a daily basis. Best of all, she is able to provide for her family and her family's future.",
-                pictureUrl:  "../expert_images/CableWorker.jpg",
-                email: "brittanyDoe@hardhatacademy.com",
-                phone: "215-555-1212",
-                zipcode: "32111",
-                state: "PA"
-            }
+    {
+        title: "Communications Equipment Installers and Repairers",
+        description: "Communications Equipment Installers and Repairers install, maintain, and repair the tower networks and systems used in cellular telecommunications and mobile broadband.",
+        training: "An associate's degree or certificate program is typical.",
+        wage: "Median annual salary is $57,720",
+        videoUrl: "https://www.youtube.com/embed/C8L0xQ4MLdd",
+        expert: {
+            name: "Brittany Doe",
+            occupation: "Communications Technicianl",
+            profile: "Brittany loves that her work does not take place behind four walls and she gets to interact with customers from all walks of life on a daily basis. Best of all, she is able to provide for her family and her family's future.",
+            pictureUrl:  "../expert_images/CableWorker.jpg",
+            email: "bdoe@hardhatacademy.com",
+            phone: "215-555-1212",
+            zipcode: "32111",
+            state: "PA"
+        }
     },
-       {
+        {
             title: "Wind Turbine Technician",
             description: "Wind turbine service technicians install, maintain, and repair wind turbines. They generally work outdoors, in confined spaces, and often at great heights.",
             training: "Attending a technical school and on-the-job training is typical.",
@@ -82,7 +82,7 @@ module.exports = [
                 phone: "315-555-1212",
                 zipcode: "42111",
                 state: "MA"
-            }
+        }
     },
         {
             title: "Elevator Installers and Repairers",
@@ -100,6 +100,7 @@ module.exports = [
                 zipcode: "11210",
                 state: "NY"
             }
+        }
         
-    }]
+]
     
