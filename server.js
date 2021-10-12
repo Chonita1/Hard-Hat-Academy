@@ -15,7 +15,7 @@ const Occupations = require('./models/occupationalData');
 const seedOccupationalData = require('./models/seedOccupationalData');
 
 //this is the db port
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3000
 const SERVER_URL = process.env.SERVER_URL || "localhost:3000"
 
 //Connect to Database
