@@ -87,7 +87,7 @@ module.exports = [
         {
             title: "Elevator Installers and Repairers",
             description: "Elevator and escalator installers and repairers install, maintain, and fix elevators, escalators, moving walkways, and other lifts.",
-            training: "a high school diploma or equivalent and nearly all participat in an apprenticeship. Most states require workers to be licensed.",
+            training: "A high school diploma or equivalent and nearly all participat in an apprenticeship. Most states require workers to be licensed.",
             wage: "Median annual salary is $88,540",
             videoUrl: "https://www.youtube.com/embed/tkM7rhRY-ag",
             expert: {
@@ -120,13 +120,13 @@ module.exports = [
         },
         {
             title: "Physical Therapy Assistant",
-            description: "Physical Therapist Assistants work under the supervision of physical therapists to help patients regain movement and manage pain after injuries and illnesses. Most physical therapist assistants and aides work in physical therapists’ offices or in hospitals.",
+            description: "Physical Therapy Assistants work under the supervision of physical therapists to help patients regain movement and manage pain after injuries and illnesses. Most physical therapist assistants work in physical therapists’ offices or in hospitals.",
             training: "A high school diploma or equivalent and on-the-job training at a minimum. It is more typical to need an associate’s degree from an accredited program and a license or certification.",
             wage: "Median annual salary is $59,770",
             videoUrl: "https://www.youtube.com/embed/4ykElSXlReU",
             expert: {
                 name: "Rachel Chavez",
-                occupation: "Physical Therapy Assistant",
+                occupation: "Pediatric Physical Therapy Assistant",
                 profile: "Rachel works for the County of San Diego helping kids with permanent physical disabilities develop functional skills, such as walking, standing, and range of motion. She says this job is near and dear to her heart. She loves watching the kids become more independent and seeing how important her work is for their development.",
                 pictureUrl:  "../expert_images/PhysicalTherapistAide2.png",
                 email: "rchavez@hardhatacademy.com",
